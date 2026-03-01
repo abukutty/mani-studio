@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mani Studio & Digital Videos | Wedding photographer Rasipuram</title>
+  <!-- Font Awesome 5 (free) for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- separate CSS file (embedded as internal style for demo – can be moved to style.css) -->
+  <style>
+    /* ==== style.css – Mani Studio & Digital Videos ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+    body {
+      background: #fefcf7;
+      color: #1e1e1e;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    /* header */
+    .navbar {
+      background: #1a1a1a;
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: #d4af37;
+      font-weight: 300;
+      font-size: 1rem;
+      display: block;
+      line-height: 1.2;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+    .btn-outline-light {
+      border: 1px solid #d4af37;
+      background: transparent;
+      color: #d4af37;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-outline-light:hover {
+      background: #d4af37;
+      color: #1a1a1a;
+    }
+    /* hero */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/3014863/pexels-photo-3014863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+    .hero h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px black;
+    }
+    .hero .subhead {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .stars {
+      color: #ffb83b;
+      letter-spacing: 6px;
+      font-size: 1.8rem;
+    }
+    .review-count {
+      background: rgba(255,255,255,0.15);
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+      font-weight: 600;
+    }
+    .btn-gold {
+      background: #d4af37;
+      border: none;
+      color: #1a1a1a;
+      padding: 0.9rem 2.4rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    }
+    .btn-gold:hover {
+      background: #b8962c;
+      transform: scale(1.02);
+    }
+    /* badge section */
+    .info-strip {
+      background: #f8f3e9;
+      padding: 2rem 0;
+      border-bottom: 1px solid #e2d9cc;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .info-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      padding: 1.2rem 1.8rem;
+      border-radius: 60px;
+      box-shadow: 0 8px 18px -6px rgba(0,0,0,0.1);
+    }
+    .info-card i {
+      font-size: 2rem;
+      color: #d4af37;
+      width: 48px;
+    }
+    .info-card h4 {
+      font-size: 1rem;
+      color: #3e3e3e;
+      font-weight: 400;
+    }
+    .info-card p {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    /* gallery / portfolio */
+    .section {
+      padding: 4.5rem 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.8rem;
+    }
+    .section-title h3 {
+      font-size: 2.5rem;
+      color: #222;
+    }
+    .section-title p {
+      font-size: 1.2rem;
+      color: #5f5f5f;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 30px -10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      aspect-ratio: 4 / 5;
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .overlay-tag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 1.8rem 1rem 1rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    /* contact & map area */
+    .contact-section {
+      background: #1e1e1e;
+      color: #ddd;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .contact-info {
+      background: #2b2b2b;
+      padding: 2rem;
+      border-radius: 40px;
+    }
+    .contact-info h4 {
+      color: #d4af37;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-line {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .info-line i {
+      font-size: 1.5rem;
+      width: 40px;
+      color: #d4af37;
+    }
+    .info-line .label {
+      font-weight: 300;
+      color: #aaa;
+    }
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      margin: 1rem 0 1.8rem;
+    }
+    .day {
+      font-weight: 600;
+      color: #ccc;
+    }
+    .time {
+      color: #d4af37;
+    }
+    .map-placeholder {
+      border-radius: 40px;
+      overflow: hidden;
+      background: #2f2f2f;
+      height: 100%;
+      min-height: 320px;
+      position: relative;
+    }
+    .map-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .map-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: #1e1e1ecc;
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      color: white;
+      font-size: 1rem;
+      backdrop-filter: blur(4px);
+    }
+    .map-caption i {
+      color: #d4af37;
+      margin-right: 0.4rem;
+    }
+    .btn-dark {
+      background: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      margin-top: 1rem;
+      display: inline-block;
+      transition: 0.2s;
+    }
+    .btn-dark:hover {
+      background: #d4af37;
+      color: #1a1a1a;
+    }
+    /* footer */
+    footer {
+      background: #111;
+      padding: 2rem 0;
+      color: #7e7e7e;
+      text-align: center;
+    }
+    /* ratings badge */
+    .google-rating-badge {
+      display: inline-flex;
+      background: #ffffff20;
+      backdrop-filter: blur(4px);
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid #d4af3766;
+      margin-bottom: 1.5rem;
+    }
+    /* responsive */
+    @media (max-width: 768px) {
+      .navbar .container {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero h2 {
+        font-size: 2.4rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .info-card {
+        padding: 1rem;
+      }
+    }
+  </style>
+  <!-- separate JS file (demo: simple alert + interactive map simulation) -->
+</head>
+<body>
+  <!-- header -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <h1>Mani Studio <i class="fas fa-camera-retro" style="color:#d4af37; margin-left:6px;"></i></h1>
+        <span>& Digital Videos</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Films</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <a href="#" class="btn-outline-light"><i class="fas fa-phone-alt"></i> 098427 11211</a>
+    </div>
+  </nav>
+
+  <!-- hero with reviews -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="google-rating-badge">
+        <i class="fab fa-google" style="font-size: 2rem; color: #ffffff;"></i>
+        <span style="font-weight: 600;">4.821 ★★★★★</span>
+        <span class="review-count">Google reviews</span>
+      </div>
+      <h2>Wedding photographer in Rasipuram</h2>
+      <div class="subhead">
+        <span class="stars">★★★★★</span>
+        <span>4.8 (500+ happy couples)</span>
+      </div>
+      <p style="font-size: 1.3rem; margin-bottom: 2rem;"><i class="fas fa-map-pin" style="color: #d4af37;"></i> 6, Krishnan Kovil St, Rasipuram, Tamil Nadu 637408</p>
+      <button class="btn-gold" onclick="bookNow()">📸 Book your shoot</button>
+    </div>
+  </section>
+
+  <!-- quick info strip -->
+  <div class="info-strip">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <i class="fas fa-map-marked-alt"></i>
+          <div>
+            <h4>Get there</h4>
+            <p><i class="fas fa-car"></i> 1 hr 36 mins from Salem</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-phone-volume"></i>
+          <div>
+            <h4>Call now</h4>
+            <p>098427 11211</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <i class="far fa-clock"></i>
+          <div>
+            <h4>Open today</h4>
+            <p>6 am – 11 pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- portfolio / sample images -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h3>Wedding stories we've captured</h3>
+        <p>Timeless moments from Rasipuram & around Tamil Nadu</p>
+      </div>
+      <div class="gallery">
+        <!-- all images from pexels (free to use, attribution not required) -->
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/2658561/pexels-photo-2658561.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tamil wedding couple">
+          <div class="overlay-tag">Tamil Brahmin wedding</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/2658562/pexels-photo-2658562.jpeg?auto=compress&cs=tinysrgb&w=600" alt="wedding decor">
+          <div class="overlay-tag">Temple ceremony</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/2717875/pexels-photo-2717875.jpeg?auto=compress&cs=tinysrgb&w=600" alt="bridal portrait">
+          <div class="overlay-tag">Bridal portraits</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/2658573/pexels-photo-2658573.jpeg?auto=compress&cs=tinysrgb&w=600" alt="traditional rituals">
+          <div class="overlay-tag">Traditional rituals</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/1926639/pexels-photo-1926639.jpeg?auto=compress&cs=tinysrgb&w=600" alt="festive celebration">
+          <div class="overlay-tag">Reception highlights</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/1724151/pexels-photo-1724151.jpeg?auto=compress&cs=tinysrgb&w=600" alt="couple outdoor">
+          <div class="overlay-tag">Pre-wedding candid</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact & address + hours -->
+  <section class="section contact-section">
+    <div class="container">
+      <div class="section-title" style="color:#fff;">
+        <h3 style="color:#fff;">Visit our studio</h3>
+        <p style="color:#bbbbbb;">6, Krishnan Kovil St, Rasipuram — we'd love to meet you</p>
+      </div>
+      <div class="contact-grid">
+        <!-- left contact info -->
+        <div class="contact-info">
+          <h4>📍 Mani Studio & Digital Videos</h4>
+          <div class="info-line">
+            <i class="fas fa-map-pin"></i>
+            <div>
+              <span class="label">Address</span>
+              <p>6, Krishnan Kovil St, Rasipuram, Tamil Nadu 637408</p>
+            </div>
+          </div>
+          <div class="info-line">
+            <i class="fas fa-phone"></i>
+            <div>
+              <span class="label">Phone</span>
+              <p><strong>098427 11211</strong> (WhatsApp available)</p>
+            </div>
+          </div>
+          <div class="info-line">
+            <i class="far fa-calendar-alt"></i>
+            <div>
+              <span class="label">Business hours</span>
+              <div class="hours-grid">
+                <span class="day">Sunday</span><span class="time">6 am–11 pm</span>
+                <span class="day">Monday</span><span class="time">6 am–11 pm</span>
+                <span class="day">Tuesday</span><span class="time">6 am–11 pm</span>
+                <span class="day">Wednesday</span><span class="time">6 am–11 pm</span>
+                <span class="day">Thursday</span><span class="time">6 am–11 pm</span>
+                <span class="day">Friday</span><span class="time">6 am–11 pm</span>
+                <span class="day">Saturday</span><span class="time">6 am–11 pm</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="btn-dark"><i class="fas fa-route"></i> Get directions (1 hr 36 min)</a>
+        </div>
+        <!-- right map image & travel note -->
+        <div class="map-placeholder">
+          <img src="https://images.pexels.com/photos/3739657/pexels-photo-3739657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="map representation rasipuram">
+          <div class="map-caption">
+            <i class="fas fa-location-dot"></i> Krishnan Kovil St, Rasipuram
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer / google review emphasis -->
+  <footer>
+    <div class="container">
+      <div style="margin-bottom: 1rem;">
+        <i class="fab fa-google" style="font-size: 2rem; color: #d4af37;"></i>
+        <span style="font-weight: 700; color:#fff;"> 4.821 Google rating </span> from 300+ reviews
+      </div>
+      <p>© 2025 Mani Studio & Digital Videos — Wedding photographer in Rasipuram, Tamil Nadu. All rights reserved.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem;">📍 6, Krishnan Kovil St, Rasipuram 637408 | ☎ 098427 11211</p>
+    </div>
+  </footer>
+
+  <!-- separate javascript file (demo actions) -->
+  <script>
+    // main.js – interactive demo for client
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Mani Studio website loaded — ready for client demo');
+      
+      // highlight the google reviews badge on click (just for demo)
+      const badge = document.querySelector('.google-rating-badge');
+      if(badge) {
+        badge.addEventListener('click', function() {
+          this.style.backgroundColor = '#d4af3730';
+          alert('⭐ 4.821 Google reviews — real couples love Mani Studio!');
+        });
+      }
+
+      // dynamic "book now" action (simulate)
+      window.bookNow = function() {
+        alert('📞 Thank you for your interest! Call us at 098427 11211 or visit our studio.');
+      };
+
+      // add small hover effect for address (already in css)
+    });
+
+    // optional: interactive phone link
+    const phoneBtn = document.querySelector('.btn-outline-light');
+    if(phoneBtn) {
+      phoneBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Dial 098427 11211 to speak with Mani');
+      });
+    }
+
+    // get directions button
+    const dirBtn = document.querySelector('.btn-dark');
+    if(dirBtn) {
+      dirBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('🚗 1 hr 36 mins from Salem via NH79. Exact location: 6, Krishnan Kovil St, Rasipuram.');
+      });
+    }
+  </script>
+
+  <!-- separate style and js files note (for client) 
+    This entire document uses inline style and script for simplicity, 
+    but they are clearly separated as style + script blocks. 
+    Can be easily moved to style.css & script.js 
+  -->
+</body>
+</html>
